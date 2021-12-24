@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--
+Template Name: Yammoe
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Copyright: OS-Templates.com
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>Yammoe</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'all/layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+    <style>
+  .dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+.abcd{
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+
+</style>
+
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<div class="wrapper row2">
+  <section class="hoc container clear">
+    <!-- ################################################################################################ -->
+
+    <ul id="latest" class="nospace group sd-third">
+      {% for i in pr %}
+      <li class="one_third">
+        <article>
+          <figure><a class="imgover" href="{{i.get_url}}"><img src="{{i.image.url}}" alt="" style="height: 200; width: 200"></a>
+            <figcaption>
+              <h6 class="heading">{{i.name}}</h6>
+              <p>{{i.desc|truncatewords:17}}</p>
+            </figcaption>
+          </figure>
+        </article>
+      </li>
+      {% endfor %}
+<!--      <li class="one_third">-->
+<!--        <article>-->
+<!--          <figure><a class="imgover" href="#"><img src="{% static 'all/images/demo/348x261.png' %}" alt=""></a>-->
+<!--            <figcaption>-->
+<!--              <p>Sed varius fringilla dolor metus iaculis odio ac scelerisque nibh velit sagittis tellus nulla</p>-->
+<!--              <footer><a class="btn" href="#">Read More</a></footer>-->
+<!--            </figcaption>-->
+<!--          </figure>-->
+<!--        </article>-->
+<!--      </li>-->
+<!--      <li class="one_third">-->
+<!--        <article>-->
+<!--          <figure><a class="imgover" href="#"><img src="{% static 'all/images/demo/348x261.png' %}" alt=""></a>-->
+<!--            <figcaption>-->
+<!--              <p>Nulla facilisi integer adipiscing turpis cras quis neque at lectus tincidunt consectetuer</p>-->
+<!--              <footer><a class="btn" href="#">Read More</a></footer>-->
+<!--            </figcaption>-->
+<!--          </figure>-->
+<!--        </article>-->
+<!--      </li>-->
+    </ul>
+    <!-- ################################################################################################ -->
+  </section>
+</div>
+<!-- ################################################################################################ -->
+<!-- JAVASCRIPTS -->
+<script src="{% static 'all/layout/scripts/jquery.min.js' %}"></script>
+<script src="{% static 'all/layout/scripts/jquery.backtotop.js' %}"></script>
+<script src="{% static 'all/layout/scripts/jquery.mobilemenu.js' %}"></script>
+</body>
+</html>
+{% endblock %}
